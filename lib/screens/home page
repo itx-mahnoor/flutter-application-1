@@ -1,0 +1,158 @@
+import 'package:flutter/material.dart';
+import 'package:investment_app/screens/profile_page.dart';
+
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Investment App'),
+        leading: InkWell(
+          onTap: () {
+            // Open side menu
+          },
+          child: const Padding(
+            padding: EdgeInsets.all(12),
+            child: Icon(Icons.menu),
+          ),
+        ),
+        actions: [
+          InkWell(
+            onTap: () {
+              // Open notifications
+            },
+            child: const Padding(
+              padding: EdgeInsets.all(8),
+              child: Icon(Icons.notifications),
+            ),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 24,
+              height: 24,
+              margin: const EdgeInsets.only(top: 61, left: 31),
+              padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 3),
+              child: const Icon(Icons.account_circle),
+            ),
+            Container(
+              width: 24,
+              height: 24,
+              margin: const EdgeInsets.only(top: 61, left: 360),
+              padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 3.5),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ProfilePage()),
+                  );
+                },
+                child: const Icon(Icons.account_box),
+              ),
+            ),
+            Container(
+              width: 354,
+              height: 41,
+              margin: const EdgeInsets.only(top: 103, left: 30),
+              alignment: Alignment.centerLeft,
+              decoration: const BoxDecoration(
+                color: Colors.black,
+              ),
+              child: const Text(
+                'Welcome, Jessie.',
+                style: TextStyle(
+                  fontFamily: 'DM Sans',
+                  fontSize: 34,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  letterSpacing: 0,
+                  height: 44 / 34,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              width: 354,
+              height: 146,
+              margin: const EdgeInsets.only(top: 178, left: 30),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: const DecorationImage(
+                  image: AssetImage('assets/portfolio-1.png'), 
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  width: 74,
+                  height: 17,
+                  margin: const EdgeInsets.only(top: 252, left: 274),
+                  alignment: Alignment.centerLeft,
+                  child: const Text(
+                    'Invest now',
+                    style: TextStyle(
+                      fontFamily: 'SF Pro Text',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                      letterSpacing: 0,
+                      height: 17 / 14,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              width: 414,
+              height: 294,
+              margin: const EdgeInsets.only(top: 323),
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/portfolio-2.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              width: 414,
+              height: 375,
+              margin: const EdgeInsets.only(top: 569),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+                image: DecorationImage(
+                  image: AssetImage('assets/portfolio-3.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              width: 415,
+              height: 75,
+              margin: const EdgeInsets.only(top: 863, left: -1),
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/portfolio-4.png'), 
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
