@@ -1,0 +1,110 @@
+import 'package:flutter/material.dart';
+import 'create_account.dart';
+
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        // title: const Text('Investment App'),
+      ),
+      backgroundColor: Colors.white,
+      body: Container(
+        color: const Color.fromARGB(255, 0, 0, 0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: 300,
+              height: 273.23126220703125,
+              //margin: const EdgeInsets.only(top: 154, left: 63),
+              child: Image.asset('assets/login.png'),
+            ),
+            // ignore: sized_box_for_whitespace
+            Container(
+              width: 354,
+              height: 82,
+              //margin: const EdgeInsets.only(top: 466, left: 41),
+              child: const Text(
+                'Stay on top of your finance with us.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'DM Sans',
+                  fontSize: 34,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  letterSpacing: 0,
+                  height: 44 / 34,
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'We are your new financial advisors to recommend the best investments for you.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'DM Sans',
+                fontSize: 14,
+                fontWeight: FontWeight.normal,
+                color: Colors.black,
+                letterSpacing: 0,
+                height: 24 / 14,
+              ),
+            ),
+            const SizedBox(height: 20),
+            // Create Account button
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CreateAccountPage()),
+                );
+              },
+              child: Container(
+                width: 354,
+                height: 60,
+                margin: const EdgeInsets.only(top: 710, left: 34),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF31A062),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Center(
+                  child: Text(
+                    'Create Account',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            // Log In text
+            Container(
+              width: 354,
+              height: 20,
+              margin: const EdgeInsets.only(top: 787, left: 34),
+              alignment: Alignment.center,
+              child: const Text(
+                'Log In...',
+                style: TextStyle(
+                  fontFamily: 'SF Pro Text',
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF31A062),
+                  letterSpacing: 0,
+                  height: 20 / 17,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
