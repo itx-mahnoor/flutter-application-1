@@ -1,0 +1,167 @@
+import 'package:flutter/material.dart';
+import 'package:investment_app/screens/home_page.dart';
+
+
+
+
+class CreateAccountPage extends StatelessWidget {
+  const CreateAccountPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Investment App'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CreateAccountPage()),
+                );
+              },
+              child: Container(
+                width: 6,
+                height: 12,
+                margin: const EdgeInsets.only(top: 71, left: 29),
+                decoration: BoxDecoration(
+                  border: Border.all(width: 2, color: Colors.black),
+                ),
+                child: const Icon(
+                  Icons.arrow_back,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            Container(
+              width: 354,
+              height: 41,
+              margin: const EdgeInsets.only(top: 103, left: 30),
+              alignment: Alignment.center,
+              child: const Text(
+                'Create an Account',
+                style: TextStyle(
+                  fontFamily: 'DM Sans',
+                  fontSize: 34,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  letterSpacing: 0,
+                  height: 44 / 34,
+                ),
+              ),
+            ),
+            Container(
+              width: 354,
+              height: 22,
+              margin: const EdgeInsets.only(top: 152, left: 32),
+              alignment: Alignment.center,
+              child: const Text(
+                'Invest and double your income now',
+                style: TextStyle(
+                  fontFamily: 'SF Pro Text',
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                  letterSpacing: 0,
+                  height: 22 / 17,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: 'Full Name',
+                contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(
+                    color: Colors.grey,
+                    width: 0.5,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: 'Email Address',
+                contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(
+                    color: Colors.grey,
+                    width: 0.5,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: 'Password',
+                contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(
+                    color: Colors.grey,
+                    width: 0.5,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              width: 354,
+              height: 60,
+              margin: const EdgeInsets.only(top: 490, left: 30),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 12, 101, 15),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: FilledButton (
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomePage()),
+                  );
+                },
+                child: const Text(
+                  'Create Account',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              width: 354,
+              height: 20,
+              margin: const EdgeInsets.only(top: 594, left: 32),
+              alignment: Alignment.center,
+              child: const Text(
+                'Already have an account?',
+                style: TextStyle(
+                  fontFamily: 'SF Pro Text',
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.green,
+                  letterSpacing: 0,
+                  height: 20 / 17,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  
+
+
+
+}
